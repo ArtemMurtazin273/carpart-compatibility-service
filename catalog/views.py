@@ -6,8 +6,14 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import generic
 
-from catalog.forms import ManufacturerSearchForm, CarSearchForm, CategorySearchForm, PartSearchForm, PartForm, \
-    MechanicSearchForm, MechanicCreationForm, MechanicLicenseUpdateForm
+from catalog.forms import (ManufacturerSearchForm,
+                           CarSearchForm,
+                           CategorySearchForm,
+                           PartSearchForm,
+                           PartForm,
+                           MechanicSearchForm,
+                           MechanicCreationForm,
+                           MechanicLicenseUpdateForm)
 from catalog.models import Car, Manufacturer, Part, PartCategory, Mechanic
 
 
