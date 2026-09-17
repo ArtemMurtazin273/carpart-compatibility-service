@@ -2,6 +2,10 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from catalog.models import (
     Mechanic,
+    Part,
+    Manufacturer,
+    PartCategory,
+    Car,
 )
 
 
@@ -23,3 +27,15 @@ class MechanicAdmin(UserAdmin):
             },
         ),
     )
+
+
+@admin.register(Part)
+class PartAdmin(admin.ModelAdmin):
+    list_display = ("name", "part_number", "price", "manufacturer", "category")
+    list_filter = ("category", "manufacturer")
+    search_fields = ("name", "part_number")
+
+
+admin.site.register(Manufacturer)
+admin.site.register(PartCategory)
+admin.site.register(Car)
