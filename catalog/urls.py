@@ -10,7 +10,7 @@ from catalog.views import (
     CarDetailView,
     CarCreateView,
     CarUpdateView,
-    CarDeleteView,
+    CarDeleteView, PartCategoryListView, PartCategoryCreateView, PartCategoryUpdateView, PartCategoryDeleteView,
 )
 
 urlpatterns = [
@@ -40,6 +40,26 @@ urlpatterns = [
     path("cars/create/", CarCreateView.as_view(), name="car-create"),
     path("cars/<int:pk>/update/", CarUpdateView.as_view(), name="car-update"),
     path("cars/<int:pk>/delete/", CarDeleteView.as_view(), name="car-delete"),
+    path(
+        "categories/",
+        PartCategoryListView.as_view(),
+        name="category-list",
+    ),
+    path(
+        "categories/create/",
+        PartCategoryCreateView.as_view(),
+        name="category-create",
+    ),
+    path(
+        "categories/<int:pk>/update/",
+        PartCategoryUpdateView.as_view(),
+        name="category-update",
+    ),
+    path(
+        "categories/<int:pk>/delete/",
+        PartCategoryDeleteView.as_view(),
+        name="category-delete",
+    ),
 ]
 
 app_name = "catalog"
