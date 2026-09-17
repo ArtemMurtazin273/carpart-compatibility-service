@@ -15,3 +15,8 @@ class PublicViewsTests(TestCase):
         response = self.client.get(INDEX_URL)
         self.assertNotEqual(response.status_code, 200)
         self.assertRedirects(response, f"/accounts/login/?next={INDEX_URL}")
+
+    def test_login_required_for_parts_list(self):
+        response = self.client.get(PARTS_URL)
+        self.assertNotEqual(response.status_code, 200)
+        self.assertRedirects(response, f"/accounts/login/?next={PARTS_URL}")
