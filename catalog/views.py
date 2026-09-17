@@ -145,3 +145,9 @@ class PartCategoryUpdateView(LoginRequiredMixin, generic.UpdateView):
     fields = "__all__"
     template_name = "catalog/category_form.html"
     success_url = reverse_lazy("catalog:category-list")
+
+
+class PartCategoryDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = PartCategory
+    template_name = "catalog/category_confirm_delete.html"
+    success_url = reverse_lazy("catalog:category-list")
