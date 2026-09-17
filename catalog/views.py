@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
-from catalog.forms import ManufacturerSearchForm
+from catalog.forms import ManufacturerSearchForm, CarSearchForm
 from catalog.models import Car, Manufacturer, Part, PartCategory
 
 
@@ -67,3 +67,23 @@ class ManufacturerUpdateView(LoginRequiredMixin, generic.UpdateView):
 class ManufacturerDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Manufacturer
     success_url = reverse_lazy("catalog:manufacturer-list")
+
+
+class CarListView(LoginRequiredMixin, generic.ListView):
+    model = Car
+    paginate_by = 5
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        model = self.request.GET.get("model", "")
+        context["search_form"] = CarSearchForm(
+            initial={"model": model}
+        )
+        return context
+
+    def get_queryset(self):
+        queryset = Car.objects.all()
+        form = CarSearchForm(self.request.GET)
+        if form.is_valid():
+            return queryset.filter(model__icontains=form.cleaned_data["model"])
+        return queryset
