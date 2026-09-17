@@ -10,7 +10,17 @@ from catalog.views import (
     CarDetailView,
     CarCreateView,
     CarUpdateView,
-    CarDeleteView, PartCategoryListView, PartCategoryCreateView, PartCategoryUpdateView, PartCategoryDeleteView,
+    CarDeleteView,
+    PartCategoryListView,
+    PartCategoryCreateView,
+    PartCategoryUpdateView,
+    PartCategoryDeleteView,
+    PartListView,
+    PartDetailView,
+    PartCreateView,
+    PartUpdateView,
+    PartDeleteView,
+    toggle_assign_to_part,
 )
 
 urlpatterns = [
@@ -59,6 +69,16 @@ urlpatterns = [
         "categories/<int:pk>/delete/",
         PartCategoryDeleteView.as_view(),
         name="category-delete",
+    ),
+    path("parts/", PartListView.as_view(), name="part-list"),
+    path("parts/<int:pk>/", PartDetailView.as_view(), name="part-detail"),
+    path("parts/create/", PartCreateView.as_view(), name="part-create"),
+    path("parts/<int:pk>/update/", PartUpdateView.as_view(), name="part-update"),
+    path("parts/<int:pk>/delete/", PartDeleteView.as_view(), name="part-delete"),
+    path(
+        "parts/<int:pk>/toggle-assign/",
+        toggle_assign_to_part,
+        name="toggle-part-assign",
     ),
 ]
 
