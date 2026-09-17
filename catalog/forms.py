@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
-from catalog.models import Mechanic
+from catalog.models import Mechanic, Car, Part
 
 
 def validate_license_number(license_number):
@@ -36,3 +36,15 @@ class MechanicLicenseUpdateForm(forms.ModelForm):
 
     def clean_license_number(self):
         return validate_license_number(self.cleaned_data["license_number"])
+
+
+class PartForm(forms.ModelForm):
+    cars = forms.ModelMultipleChoiceField(
+        queryset=Car.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+        required=False,
+    )
+
+    class Meta:
+        model = Part
+        fields = "__all__"
