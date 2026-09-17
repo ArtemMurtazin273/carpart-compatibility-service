@@ -7,7 +7,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 
 from catalog.forms import ManufacturerSearchForm, CarSearchForm, CategorySearchForm, PartSearchForm, PartForm, \
-    MechanicSearchForm
+    MechanicSearchForm, MechanicCreationForm
 from catalog.models import Car, Manufacturer, Part, PartCategory, Mechanic
 
 
@@ -235,3 +235,9 @@ class MechanicListView(LoginRequiredMixin, generic.ListView):
 class MechanicDetailView(LoginRequiredMixin, generic.DetailView):
     model = Mechanic
     queryset = Mechanic.objects.prefetch_related("parts__manufacturer")
+
+
+class MechanicCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Mechanic
+    form_class = MechanicCreationForm
+    success_url = reverse_lazy("catalog:mechanic-list")
