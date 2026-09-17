@@ -31,3 +31,11 @@ class ModelsTests(TestCase):
             description="Brake pads, rotors, and calipers",
         )
         self.assertEqual(str(category), "Braking System")
+
+    def test_car_str(self):
+        car = Car.objects.create(
+            make="Volkswagen",
+            model="Golf",
+            year=2012,
+        )
+        self.assertEqual(str(car), "Volkswagen Golf (2012)")
