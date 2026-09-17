@@ -131,3 +131,10 @@ class PartCategoryListView(LoginRequiredMixin, generic.ListView):
         if form.is_valid():
             return queryset.filter(name__icontains=form.cleaned_data["name"])
         return queryset
+
+
+class PartCategoryCreateView(LoginRequiredMixin, generic.CreateView):
+    model = PartCategory
+    fields = "__all__"
+    template_name = "catalog/category_form.html"
+    success_url = reverse_lazy("catalog:category-list")
