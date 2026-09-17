@@ -230,3 +230,8 @@ class MechanicListView(LoginRequiredMixin, generic.ListView):
                 username__icontains=form.cleaned_data["username"]
             )
         return queryset
+
+
+class MechanicDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Mechanic
+    queryset = Mechanic.objects.prefetch_related("parts__manufacturer")
