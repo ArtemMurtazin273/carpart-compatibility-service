@@ -21,8 +21,13 @@ class LicenseValidationTests(TestCase):
             validate_license_number(long_license)
 
     def test_license_number_invalid_letters(self):
-
         with self.assertRaises(ValidationError):
             validate_license_number("mec12345")
         with self.assertRaises(ValidationError):
             validate_license_number("12A12345")
+
+    def test_license_number_invalid_digits(self):
+        with self.assertRaises(ValidationError):
+            validate_license_number("ABC1234X")
+        with self.assertRaises(ValidationError):
+            validate_license_number("ABC1234_")
