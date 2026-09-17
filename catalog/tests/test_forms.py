@@ -4,6 +4,7 @@ from django.test import TestCase
 from catalog.forms import (
     MechanicLicenseUpdateForm,
     validate_license_number,
+    PartSearchForm,
 )
 
 
@@ -44,3 +45,8 @@ class FormsTests(TestCase):
         form_data = {"license_number": "wrong"}
         form = MechanicLicenseUpdateForm(data=form_data)
         self.assertFalse(form.is_valid())
+
+    def test_part_search_form(self):
+        form = PartSearchForm(data={"name": "Filter"})
+        self.assertTrue(form.is_valid())
+        self.assertEqual(form.cleaned_data["name"], "Filter")
