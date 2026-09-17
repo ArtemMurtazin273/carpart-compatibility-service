@@ -247,3 +247,8 @@ class MechanicLicenseUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Mechanic
     form_class = MechanicLicenseUpdateForm
     success_url = reverse_lazy("catalog:mechanic-list")
+
+
+class MechanicDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Mechanic
+    success_url = reverse_lazy("catalog:mechanic-list")
