@@ -39,3 +39,15 @@ class ModelsTests(TestCase):
             year=2012,
         )
         self.assertEqual(str(car), "Volkswagen Golf (2012)")
+
+    def test_part_str(self):
+        manufacturer = Manufacturer.objects.create(name="Brembo", country="Italy")
+        category = PartCategory.objects.create(name="Brakes")
+        part = Part.objects.create(
+            name="Brake Disc Front",
+            part_number="09.9772.11",
+            price=85.50,
+            manufacturer=manufacturer,
+            category=category,
+        )
+        self.assertEqual(str(part), "Brake Disc Front [09.9772.11]")
