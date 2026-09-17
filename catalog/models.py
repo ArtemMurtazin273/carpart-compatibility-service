@@ -1,6 +1,8 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+from carpart_service import settings
+
 
 class Mechanic(AbstractUser):
     license_number = models.CharField(max_length=255, unique=True)
@@ -53,3 +55,35 @@ class Car(models.Model):
 
     def __str__(self):
         return f"{self.make} {self.model} ({self.year})"
+
+
+class Part(models.Model):
+    name = models.CharField(max_length=255)
+    part_number = models.CharField(max_length=64, unique=True)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    manufacturer = models.ForeignKey(
+        Manufacturer,
+        on_delete=models.CASCADE,
+        related_name="parts"
+    )
+    category = models.ForeignKey(
+        PartCategory,
+        on_delete=models.CASCADE,
+        related_name="parts"
+    )
+    cars = models.ManyToManyField(
+        Car,
+        related_name="parts",
+        blank=True
+    )
+    mechanics = models.ManyToManyField(
+        settings.AUTH_USER_MODEL,
+        related_name="parts",
+        blank=True
+    )
+
+    class Meta:
+        ordering = ["name"]
+
+    def __str__(self):
+        return f"{self.name} [{self.part_number}]"
