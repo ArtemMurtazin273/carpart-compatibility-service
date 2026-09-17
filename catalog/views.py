@@ -171,3 +171,10 @@ class PartListView(LoginRequiredMixin, generic.ListView):
         if form.is_valid():
             return queryset.filter(name__icontains=form.cleaned_data["name"])
         return queryset
+
+
+class PartDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Part
+    queryset = Part.objects.select_related("manufacturer", "category").prefetch_related(
+        "cars", "mechanics"
+    )
