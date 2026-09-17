@@ -6,8 +6,9 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import generic
 
-from catalog.forms import ManufacturerSearchForm, CarSearchForm, CategorySearchForm, PartSearchForm, PartForm
-from catalog.models import Car, Manufacturer, Part, PartCategory
+from catalog.forms import ManufacturerSearchForm, CarSearchForm, CategorySearchForm, PartSearchForm, PartForm, \
+    MechanicSearchForm
+from catalog.models import Car, Manufacturer, Part, PartCategory, Mechanic
 
 
 @login_required
@@ -207,3 +208,25 @@ def toggle_assign_to_part(request, pk):
     else:
         part.mechanics.add(mechanic)
     return HttpResponseRedirect(reverse_lazy("catalog:part-detail", args=[pk]))
+
+
+class MechanicListView(LoginRequiredMixin, generic.ListView):
+    model = Mechanic
+    paginate_by = 5
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        username = self.request.GET.get("username", "")
+        context["search_form"] = MechanicSearchForm(
+            initial={"username": username}
+        )
+        return context
+
+    def get_queryset(self):
+        queryset = Mechanic.objects.all()
+        form = MechanicSearchForm(self.request.GET)
+        if form.is_valid():
+            return queryset.filter(
+                username__icontains=form.cleaned_data["username"]
+            )
+        return queryset
