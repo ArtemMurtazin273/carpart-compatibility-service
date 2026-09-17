@@ -17,3 +17,10 @@ class ModelsTests(TestCase):
             str(mechanic),
             f"{mechanic.username} ({mechanic.first_name} {mechanic.last_name})"
         )
+
+    def test_manufacturer_str(self):
+        manufacturer = Manufacturer.objects.create(
+            name="Bosch",
+            country="Germany",
+        )
+        self.assertEqual(str(manufacturer), "Bosch (Germany)")
