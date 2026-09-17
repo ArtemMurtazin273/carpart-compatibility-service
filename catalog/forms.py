@@ -48,3 +48,12 @@ class PartForm(forms.ModelForm):
     class Meta:
         model = Part
         fields = "__all__"
+
+
+class CarSearchForm(forms.Form):
+    model = forms.CharField(
+        max_length=255,
+        required=False,
+        label="",
+        widget=forms.TextInput(attrs={"placeholder": "Search by model..."}),
+    )
