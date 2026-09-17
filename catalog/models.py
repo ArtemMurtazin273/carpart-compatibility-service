@@ -35,3 +35,21 @@ class PartCategory(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Car(models.Model):
+    make = models.CharField(max_length=255)
+    model = models.CharField(max_length=255)
+    year = models.IntegerField()
+
+    class Meta:
+        ordering = ["make", "model", "year"]
+        constraints = [
+            models.UniqueConstraint(
+                fields=["make", "model", "year"],
+                name="unique_car_specification"
+            )
+        ]
+
+    def __str__(self):
+        return f"{self.make} {self.model} ({self.year})"
