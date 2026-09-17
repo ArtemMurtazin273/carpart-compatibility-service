@@ -88,3 +88,24 @@ class PartViewsTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(response.context["part_list"]), 5)
         self.assertTrue(response.context["is_paginated"])
+
+    def test_part_search_by_name(self):
+        Part.objects.create(
+            name="Oil Filter High Flow",
+            part_number="OF-100",
+            price=Decimal("15.00"),
+            manufacturer=self.manufacturer,
+            category=self.category,
+        )
+        Part.objects.create(
+            name="Brake Disc Front",
+            part_number="BD-200",
+            price=Decimal("120.00"),
+            manufacturer=self.manufacturer,
+            category=self.category,
+        )
+
+        response = self.client.get(PARTS_URL, {"name": "Filter"})
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.context["part_list"]), 1)
+        self.assertEqual(response.context["part_list"][0].name, "Oil Filter High Flow")
