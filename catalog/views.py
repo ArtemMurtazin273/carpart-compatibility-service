@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
-from catalog.forms import ManufacturerSearchForm, CarSearchForm, CategorySearchForm, PartSearchForm
+from catalog.forms import ManufacturerSearchForm, CarSearchForm, CategorySearchForm, PartSearchForm, PartForm
 from catalog.models import Car, Manufacturer, Part, PartCategory
 
 
@@ -178,3 +178,9 @@ class PartDetailView(LoginRequiredMixin, generic.DetailView):
     queryset = Part.objects.select_related("manufacturer", "category").prefetch_related(
         "cars", "mechanics"
     )
+
+
+class PartCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Part
+    form_class = PartForm
+    success_url = reverse_lazy("catalog:part-list")
