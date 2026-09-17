@@ -138,3 +138,10 @@ class PartCategoryCreateView(LoginRequiredMixin, generic.CreateView):
     fields = "__all__"
     template_name = "catalog/category_form.html"
     success_url = reverse_lazy("catalog:category-list")
+
+
+class PartCategoryUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = PartCategory
+    fields = "__all__"
+    template_name = "catalog/category_form.html"
+    success_url = reverse_lazy("catalog:category-list")
