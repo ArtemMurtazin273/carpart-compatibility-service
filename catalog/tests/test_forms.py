@@ -2,6 +2,7 @@ from django.core.exceptions import ValidationError
 from django.test import TestCase
 
 from catalog.forms import (
+    MechanicLicenseUpdateForm,
     validate_license_number,
 )
 
@@ -31,3 +32,10 @@ class LicenseValidationTests(TestCase):
             validate_license_number("ABC1234X")
         with self.assertRaises(ValidationError):
             validate_license_number("ABC1234_")
+
+
+class FormsTests(TestCase):
+    def test_mechanic_license_update_form_valid(self):
+        form_data = {"license_number": "UKR98765"}
+        form = MechanicLicenseUpdateForm(data=form_data)
+        self.assertTrue(form.is_valid())
