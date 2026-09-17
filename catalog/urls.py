@@ -21,6 +21,11 @@ from catalog.views import (
     PartUpdateView,
     PartDeleteView,
     toggle_assign_to_part,
+    MechanicListView,
+    MechanicDetailView,
+    MechanicCreateView,
+    MechanicLicenseUpdateView,
+    MechanicDeleteView,
 )
 
 urlpatterns = [
@@ -79,6 +84,23 @@ urlpatterns = [
         "parts/<int:pk>/toggle-assign/",
         toggle_assign_to_part,
         name="toggle-part-assign",
+    ),
+    path("mechanics/", MechanicListView.as_view(), name="mechanic-list"),
+    path(
+        "mechanics/<int:pk>/",
+        MechanicDetailView.as_view(),
+        name="mechanic-detail",
+    ),
+    path("mechanics/create/", MechanicCreateView.as_view(), name="mechanic-create"),
+    path(
+        "mechanics/<int:pk>/update/",
+        MechanicLicenseUpdateView.as_view(),
+        name="mechanic-update",
+    ),
+    path(
+        "mechanics/<int:pk>/delete/",
+        MechanicDeleteView.as_view(),
+        name="mechanic-delete",
     ),
 ]
 
