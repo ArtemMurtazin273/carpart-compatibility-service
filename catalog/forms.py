@@ -1,3 +1,4 @@
+from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
@@ -23,6 +24,15 @@ class MechanicCreationForm(UserCreationForm):
             "last_name",
             "email",
         )
+
+    def clean_license_number(self):
+        return validate_license_number(self.cleaned_data["license_number"])
+
+
+class MechanicLicenseUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Mechanic
+        fields = ("license_number",)
 
     def clean_license_number(self):
         return validate_license_number(self.cleaned_data["license_number"])
