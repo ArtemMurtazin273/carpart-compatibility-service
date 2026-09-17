@@ -190,3 +190,8 @@ class PartUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Part
     form_class = PartForm
     success_url = reverse_lazy("catalog:part-list")
+
+
+class PartDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Part
+    success_url = reverse_lazy("catalog:part-list")
