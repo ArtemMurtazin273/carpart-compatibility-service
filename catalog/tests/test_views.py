@@ -109,3 +109,21 @@ class PartViewsTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(response.context["part_list"]), 1)
         self.assertEqual(response.context["part_list"][0].name, "Oil Filter High Flow")
+
+    def test_toggle_assign_mechanic_to_part(self):
+        part = Part.objects.create(
+            name="Spark Plug Platinum",
+            part_number="SP-300",
+            price=Decimal("12.50"),
+            manufacturer=self.manufacturer,
+            category=self.category,
+        )
+        toggle_url = reverse("catalog:toggle-part-assign", args=[part.id])
+
+        response = self.client.get(toggle_url)
+        self.assertRedirects(response, reverse("catalog:part-detail", args=[part.id]))
+        self.assertIn(self.user, part.mechanics.all())
+
+        response = self.client.get(toggle_url)
+        self.assertRedirects(response, reverse("catalog:part-detail", args=[part.id]))
+        self.assertNotIn(self.user, part.mechanics.all())
