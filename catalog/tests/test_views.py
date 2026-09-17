@@ -59,3 +59,32 @@ class PrivateDashboardTests(TestCase):
 
         response2 = self.client.get(INDEX_URL)
         self.assertEqual(response2.context["num_visits"], 2)
+
+
+class PartViewsTests(TestCase):
+    def setUp(self):
+        self.client = Client()
+        self.user = get_user_model().objects.create_user(
+            username="lead_mechanic",
+            password="securepassword123",
+            license_number="MEC99999",
+        )
+        self.client.force_login(self.user)
+
+        self.manufacturer = Manufacturer.objects.create(name="Brembo", country="Italy")
+        self.category = PartCategory.objects.create(name="Braking")
+
+    def test_parts_pagination(self):
+        for i in range(7):
+            Part.objects.create(
+                name=f"Part {i}",
+                part_number=f"BR-{i:03d}",
+                price=Decimal("100.00"),
+                manufacturer=self.manufacturer,
+                category=self.category,
+            )
+
+        response = self.client.get(PARTS_URL)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.context["part_list"]), 5)
+        self.assertTrue(response.context["is_paginated"])
