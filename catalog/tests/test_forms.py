@@ -39,3 +39,8 @@ class FormsTests(TestCase):
         form_data = {"license_number": "UKR98765"}
         form = MechanicLicenseUpdateForm(data=form_data)
         self.assertTrue(form.is_valid())
+
+    def test_mechanic_license_update_form_invalid(self):
+        form_data = {"license_number": "wrong"}
+        form = MechanicLicenseUpdateForm(data=form_data)
+        self.assertFalse(form.is_valid())
