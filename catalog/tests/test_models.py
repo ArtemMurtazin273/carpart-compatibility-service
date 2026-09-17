@@ -24,3 +24,10 @@ class ModelsTests(TestCase):
             country="Germany",
         )
         self.assertEqual(str(manufacturer), "Bosch (Germany)")
+
+    def test_category_str(self):
+        category = PartCategory.objects.create(
+            name="Braking System",
+            description="Brake pads, rotors, and calipers",
+        )
+        self.assertEqual(str(category), "Braking System")
