@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}{{ mechanic.username }} - CarPart Hub{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm mb-4">
+  <div class="card-body p-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div>
+        <h1 class="h3 fw-bold text-dark mb-1">{{ mechanic.first_name }} {{ mechanic.last_name }}</h1>
+        <p class="text-muted mb-0">@{{ mechanic.username }} &bull; {{ mechanic.email }}</p>
+      </div>
+      <div class="d-flex gap-2">
+        <a href="{% url 'catalog:mechanic-update' mechanic.id %}" class="btn btn-outline-primary">
+          <i class="bi bi-card-checklist me-1"></i>Update License
+        </a>
+        <a href="{% url 'catalog:mechanic-delete' mechanic.id %}" class="btn btn-outline-danger">
+          <i class="bi bi-trash me-1"></i>Delete
+        </a>
+      </div>
+    </div>
+
+    <div class="py-2 border-top border-bottom my-3">
+      <span class="text-muted small d-block">Certification / License Number:</span>
+      <span class="badge bg-secondary font-monospace fs-6">{{ mechanic.license_number }}</span>
+    </div>
+
+    <h5 class="fw-bold text-dark mt-4 mb-3">
+      <i class="bi bi-tools me-2 text-warning"></i>Assigned Parts for Servicing
+    </h5>
+    {% if mechanic.parts.all %}
+      <div class="table-responsive">
+        <table class="table table-hover align-middle border rounded">
+          <thead class="table-light">
+            <tr>
+              <th>Part Number</th>
+              <th>Name</th>
+              <th>Manufacturer</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for part in mechanic.parts.all %}
+              <tr>
+                <td><span class="badge bg-secondary font-monospace">{{ part.part_number }}</span></td>
+                <td>
+                  <a href="{% url 'catalog:part-detail' part.id %}" class="fw-semibold text-decoration-none text-dark">
+                    {{ part.name }}
+                  </a>
+                </td>
+                <td>{{ part.manufacturer.name }}</td>
+                <td>${{ part.price }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <p class="text-muted">No spare parts currently assigned to this mechanic.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

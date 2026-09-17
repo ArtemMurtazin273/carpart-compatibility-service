@@ -1,2 +1,12 @@
-.idea
-venv
+.idea/
+venv/
+.venv
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+db.sqlite3
+.pytest_cache/
+.coverage
+htmlcov/
+.DS_Store

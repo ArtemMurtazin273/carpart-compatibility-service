@@ -1,0 +1,78 @@
+[
+  {
+    "model": "catalog.manufacturer",
+    "pk": 1,
+    "fields": {
+      "name": "Brembo",
+      "country": "Italy"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 2,
+    "fields": {
+      "name": "Bosch",
+      "country": "Germany"
+    }
+  },
+  {
+    "model": "catalog.partcategory",
+    "pk": 1,
+    "fields": {
+      "name": "Braking System",
+      "description": "Brake discs, pads, hoses, and calipers."
+    }
+  },
+  {
+    "model": "catalog.partcategory",
+    "pk": 2,
+    "fields": {
+      "name": "Filters",
+      "description": "Air, cabin, oil, and fuel filtration elements."
+    }
+  },
+  {
+    "model": "catalog.car",
+    "pk": 1,
+    "fields": {
+      "make": "Volkswagen",
+      "model": "Golf VII",
+      "year": 2018
+    }
+  },
+  {
+    "model": "catalog.car",
+    "pk": 2,
+    "fields": {
+      "make": "Audi",
+      "model": "A4 B9",
+      "year": 2020
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 1,
+    "fields": {
+      "name": "Front Brake Disc Vented",
+      "part_number": "09.9772.11",
+      "price": "89.99",
+      "manufacturer": 1,
+      "category": 1,
+      "cars": [1, 2],
+      "mechanics": []
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 2,
+    "fields": {
+      "name": "Active Carbon Cabin Air Filter",
+      "part_number": "1 987 432 397",
+      "price": "24.50",
+      "manufacturer": 2,
+      "category": 2,
+      "cars": [1],
+      "mechanics": []
+    }
+  }
+]

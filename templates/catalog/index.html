@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - CarPart Hub{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+  <div class="col">
+    <h1 class="h2 fw-bold text-dark">System Overview</h1>
+    <p class="text-muted">General statistics of spare parts and vehicle compatibility registry.</p>
+  </div>
+</div>
+
+<div class="row g-3 mb-4">
+  <div class="col-md-4 col-sm-6">
+    <div class="card h-100 border-start border-4 border-warning shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <h6 class="text-muted text-uppercase small">Total Parts</h6>
+            <h2 class="display-6 fw-bold mb-0 text-dark">{{ num_parts }}</h2>
+          </div>
+          <i class="bi bi-cpu fs-1 text-warning"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-6">
+    <div class="card h-100 border-start border-4 border-primary shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <h6 class="text-muted text-uppercase small">Cars Registered</h6>
+            <h2 class="display-6 fw-bold mb-0 text-dark">{{ num_cars }}</h2>
+          </div>
+          <i class="bi bi-car-front fs-1 text-primary"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-6">
+    <div class="card h-100 border-start border-4 border-success shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <h6 class="text-muted text-uppercase small">Manufacturers</h6>
+            <h2 class="display-6 fw-bold mb-0 text-dark">{{ num_manufacturers }}</h2>
+          </div>
+          <i class="bi bi-buildings fs-1 text-success"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-6">
+    <div class="card h-100 border-start border-4 border-info shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <h6 class="text-muted text-uppercase small">Categories</h6>
+            <h2 class="display-6 fw-bold mb-0 text-dark">{{ num_categories }}</h2>
+          </div>
+          <i class="bi bi-tags fs-1 text-info"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-6">
+    <div class="card h-100 border-start border-4 border-secondary shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <h6 class="text-muted text-uppercase small">Mechanics</h6>
+            <h2 class="display-6 fw-bold mb-0 text-dark">{{ num_mechanics }}</h2>
+          </div>
+          <i class="bi bi-people fs-1 text-secondary"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-6">
+    <div class="card h-100 border-start border-4 border-dark shadow-sm bg-white">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <h6 class="text-muted text-uppercase small">Your Visits</h6>
+            <h2 class="display-6 fw-bold mb-0 text-dark">{{ num_visits }}</h2>
+          </div>
+          <i class="bi bi-clock-history fs-1 text-dark"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
