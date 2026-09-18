@@ -16,19 +16,187 @@
     }
   },
   {
+    "model": "catalog.manufacturer",
+    "pk": 3,
+    "fields": {
+      "name": "Lemförder",
+      "country": "Germany"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 4,
+    "fields": {
+      "name": "MANN-FILTER",
+      "country": "Germany"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 5,
+    "fields": {
+      "name": "Denso",
+      "country": "Japan"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 6,
+    "fields": {
+      "name": "Sachs",
+      "country": "Germany"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 7,
+    "fields": {
+      "name": "NGK",
+      "country": "Japan"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 8,
+    "fields": {
+      "name": "Continental",
+      "country": "Germany"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 9,
+    "fields": {
+      "name": "Valeo",
+      "country": "France"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 10,
+    "fields": {
+      "name": "Febi Bilstein",
+      "country": "Germany"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 11,
+    "fields": {
+      "name": "Textar",
+      "country": "Germany"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 12,
+    "fields": {
+      "name": "Hella",
+      "country": "Germany"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 13,
+    "fields": {
+      "name": "SKF",
+      "country": "Sweden"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 14,
+    "fields": {
+      "name": "Gates",
+      "country": "USA"
+    }
+  },
+  {
+    "model": "catalog.manufacturer",
+    "pk": 15,
+    "fields": {
+      "name": "Mahle",
+      "country": "Germany"
+    }
+  },
+  {
     "model": "catalog.partcategory",
     "pk": 1,
     "fields": {
       "name": "Braking System",
-      "description": "Brake discs, pads, hoses, and calipers."
+      "description": "Brake discs, pads, calipers, and hydraulic hoses."
     }
   },
   {
     "model": "catalog.partcategory",
     "pk": 2,
     "fields": {
-      "name": "Filters",
-      "description": "Air, cabin, oil, and fuel filtration elements."
+      "name": "Filtration & Fluids",
+      "description": "Engine oil, air, fuel, and cabin microfilters."
+    }
+  },
+  {
+    "model": "catalog.partcategory",
+    "pk": 3,
+    "fields": {
+      "name": "Suspension & Steering",
+      "description": "Control arms, shock absorbers, tie rods, and bushings."
+    }
+  },
+  {
+    "model": "catalog.partcategory",
+    "pk": 4,
+    "fields": {
+      "name": "Ignition & Electronics",
+      "description": "Spark plugs, ignition coils, and oxygen sensors."
+    }
+  },
+  {
+    "model": "catalog.partcategory",
+    "pk": 5,
+    "fields": {
+      "name": "Drivetrain & Transmission",
+      "description": "Clutch kits, dual-mass flywheels, and CV joints."
+    }
+  },
+  {
+    "model": "catalog.partcategory",
+    "pk": 6,
+    "fields": {
+      "name": "Cooling System",
+      "description": "Water pumps, thermostats, and radiator components."
+    }
+  },
+  {
+    "model": "catalog.partcategory",
+    "pk": 7,
+    "fields": {
+      "name": "Exterior & Body",
+      "description": "Bumpers, mirrors, headlights, and body panels."
+    }
+  },
+  {
+    "model": "catalog.partcategory",
+    "pk": 8,
+    "fields": {
+      "name": "Interior & Comfort",
+      "description": "Seats, dashboards, and cabin trim components."
+    }
+  },
+  {
+    "model": "catalog.partcategory",
+    "pk": 9,
+    "fields": {
+      "name": "Electrical & Battery",
+      "description": "Batteries, alternators, and starter motors."
+    }
+  },
+  {
+    "model": "catalog.partcategory",
+    "pk": 10,
+    "fields": {
+      "name": "Exhaust System",
+      "description": "Mufflers, catalytic converters, and exhaust sensors."
     }
   },
   {
@@ -44,35 +212,748 @@
     "model": "catalog.car",
     "pk": 2,
     "fields": {
+      "make": "Volkswagen",
+      "model": "Passat B8",
+      "year": 2019
+    }
+  },
+  {
+    "model": "catalog.car",
+    "pk": 3,
+    "fields": {
+      "make": "Volkswagen",
+      "model": "Touareg",
+      "year": 2021
+    }
+  },
+  {
+    "model": "catalog.car",
+    "pk": 4,
+    "fields": {
       "make": "Audi",
       "model": "A4 B9",
       "year": 2020
     }
   },
   {
+    "model": "catalog.car",
+    "pk": 5,
+    "fields": {
+      "make": "Skoda",
+      "model": "Octavia A7",
+      "year": 2019
+    }
+  },
+  {
+    "model": "catalog.car",
+    "pk": 6,
+    "fields": {
+      "make": "BMW",
+      "model": "3 Series G20",
+      "year": 2021
+    }
+  },
+  {
+    "model": "catalog.car",
+    "pk": 7,
+    "fields": {
+      "make": "Toyota",
+      "model": "RAV4",
+      "year": 2022
+    }
+  },
+  {
+    "model": "catalog.car",
+    "pk": 8,
+    "fields": {
+      "make": "Volkswagen",
+      "model": "Tiguan",
+      "year": 2020
+    }
+  },
+  {
+    "model": "catalog.car",
+    "pk": 9,
+    "fields": {
+      "make": "Audi",
+      "model": "Q5",
+      "year": 2021
+    }
+  },
+  {
+    "model": "catalog.car",
+    "pk": 10,
+    "fields": {
+      "make": "Skoda",
+      "model": "Superb",
+      "year": 2020
+    }
+  },
+  {
+    "model": "catalog.car",
+    "pk": 11,
+    "fields": {
+      "make": "BMW",
+      "model": "5 Series G30",
+      "year": 2022
+    }
+  },
+  {
+    "model": "catalog.car",
+    "pk": 12,
+    "fields": {
+      "make": "BMW",
+      "model": "X3",
+      "year": 2021
+    }
+  },
+  {
+    "model": "catalog.car",
+    "pk": 13,
+    "fields": {
+      "make": "Toyota",
+      "model": "Camry",
+      "year": 2021
+    }
+  },
+  {
+    "model": "catalog.car",
+    "pk": 14,
+    "fields": {
+      "make": "Toyota",
+      "model": "Corolla",
+      "year": 2020
+    }
+  },
+  {
+    "model": "catalog.car",
+    "pk": 15,
+    "fields": {
+      "make": "Mercedes-Benz",
+      "model": "C-Class W205",
+      "year": 2019
+    }
+  },
+  {
+    "model": "catalog.car",
+    "pk": 16,
+    "fields": {
+      "make": "Mercedes-Benz",
+      "model": "E-Class W213",
+      "year": 2021
+    }
+  },
+  {
+    "model": "catalog.car",
+    "pk": 17,
+    "fields": {
+      "make": "Ford",
+      "model": "Focus",
+      "year": 2019
+    }
+  },
+  {
+    "model": "catalog.car",
+    "pk": 18,
+    "fields": {
+      "make": "Ford",
+      "model": "Kuga",
+      "year": 2021
+    }
+  },
+  {
+    "model": "catalog.car",
+    "pk": 19,
+    "fields": {
+      "make": "Renault",
+      "model": "Megane",
+      "year": 2020
+    }
+  },
+  {
+    "model": "catalog.car",
+    "pk": 20,
+    "fields": {
+      "make": "Hyundai",
+      "model": "Tucson",
+      "year": 2022
+    }
+  },
+  {
+    "model": "catalog.mechanic",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Wv9K0xR2Z1$D1zOq0x3zT4vC7y9Wk4rB5n6M7p8Q9r0S1t2U3v4W5x=",
+      "is_superuser": false,
+      "username": "oleg_tech",
+      "first_name": "Oleg",
+      "last_name": "Kovalenko",
+      "email": "oleg.kovalenko@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "license_number": "MEC10021"
+    }
+  },
+  {
+    "model": "catalog.mechanic",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Wv9K0xR2Z1$D1zOq0x3zT4vC7y9Wk4rB5n6M7p8Q9r0S1t2U3v4W5x=",
+      "is_superuser": false,
+      "username": "andriy_auto",
+      "first_name": "Andriy",
+      "last_name": "Shevchenko",
+      "email": "andriy.sheva@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "license_number": "UKR44512"
+    }
+  },
+  {
+    "model": "catalog.mechanic",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Wv9K0xR2Z1$D1zOq0x3zT4vC7y9Wk4rB5n6M7p8Q9r0S1t2U3v4W5x=",
+      "is_superuser": false,
+      "username": "dmytro_diag",
+      "first_name": "Dmytro",
+      "last_name": "Melnyk",
+      "email": "dmytro.m@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "license_number": "SRV88901"
+    }
+  },
+  {
+    "model": "catalog.mechanic",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Wv9K0xR2Z1$D1zOq0x3zT4vC7y9Wk4rB5n6M7p8Q9r0S1t2U3v4W5x=",
+      "is_superuser": false,
+      "username": "viktor_master",
+      "first_name": "Viktor",
+      "last_name": "Bondar",
+      "email": "viktor.bondar@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "license_number": "VIK55023"
+    }
+  },
+  {
+    "model": "catalog.mechanic",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Wv9K0xR2Z1$D1zOq0x3zT4vC7y9Wk4rB5n6M7p8Q9r0S1t2U3v4W5x=",
+      "is_superuser": false,
+      "username": "serhiy_pro",
+      "first_name": "Serhiy",
+      "last_name": "Tkachenko",
+      "email": "serhiy.tkachenko@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "license_number": "SER67890"
+    }
+  },
+  {
+    "model": "catalog.mechanic",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Wv9K0xR2Z1$D1zOq0x3zT4vC7y9Wk4rB5n6M7p8Q9r0S1t2U3v4W5x=",
+      "is_superuser": false,
+      "username": "natalia_fix",
+      "first_name": "Natalia",
+      "last_name": "Kravets",
+      "email": "natalia.kravets@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "license_number": "NAT13579"
+    }
+  },
+  {
+    "model": "catalog.mechanic",
+    "pk": 8,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Wv9K0xR2Z1$D1zOq0x3zT4vC7y9Wk4rB5n6M7p8Q9r0S1t2U3v4W5x=",
+      "is_superuser": false,
+      "username": "ivan_speed",
+      "first_name": "Ivan",
+      "last_name": "Petrenko",
+      "email": "ivan.petrenko@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "license_number": "IVN24680"
+    }
+  },
+  {
+    "model": "catalog.mechanic",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Wv9K0xR2Z1$D1zOq0x3zT4vC7y9Wk4rB5n6M7p8Q9r0S1t2U3v4W5x=",
+      "is_superuser": false,
+      "username": "yuriy_engine",
+      "first_name": "Yuriy",
+      "last_name": "Boyko",
+      "email": "yuriy.boyko@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "license_number": "YUR11223"
+    }
+  },
+  {
+    "model": "catalog.mechanic",
+    "pk": 10,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Wv9K0xR2Z1$D1zOq0x3zT4vC7y9Wk4rB5n6M7p8Q9r0S1t2U3v4W5x=",
+      "is_superuser": false,
+      "username": "olena_brake",
+      "first_name": "Olena",
+      "last_name": "Savchenko",
+      "email": "olena.savchenko@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "license_number": "OLE99887"
+    }
+  },
+  {
     "model": "catalog.part",
     "pk": 1,
     "fields": {
-      "name": "Front Brake Disc Vented",
+      "name": "Front Brake Disc Vented 312mm",
       "part_number": "09.9772.11",
       "price": "89.99",
       "manufacturer": 1,
       "category": 1,
-      "cars": [1, 2],
-      "mechanics": []
+      "cars": [1, 2, 4, 5],
+      "mechanics": [2]
     }
   },
   {
     "model": "catalog.part",
     "pk": 2,
     "fields": {
+      "name": "Ceramic Brake Pads Front Set",
+      "part_number": "P 85 126",
+      "price": "54.50",
+      "manufacturer": 1,
+      "category": 1,
+      "cars": [1, 2, 5],
+      "mechanics": [2, 3]
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 3,
+    "fields": {
       "name": "Active Carbon Cabin Air Filter",
       "part_number": "1 987 432 397",
       "price": "24.50",
       "manufacturer": 2,
       "category": 2,
-      "cars": [1],
+      "cars": [1, 2, 5],
       "mechanics": []
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 4,
+    "fields": {
+      "name": "High-Efficiency Oil Filter Cartridge",
+      "part_number": "HU 719/7 x",
+      "price": "14.80",
+      "manufacturer": 4,
+      "category": 2,
+      "cars": [1, 2, 3, 4, 5],
+      "mechanics": [3]
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 5,
+    "fields": {
+      "name": "Front Lower Control Arm",
+      "part_number": "36214 01",
+      "price": "118.00",
+      "manufacturer": 3,
+      "category": 3,
+      "cars": [1, 2, 5],
+      "mechanics": []
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 6,
+    "fields": {
+      "name": "Iridium TT Spark Plug",
+      "part_number": "IK20TT",
+      "price": "12.90",
+      "manufacturer": 5,
+      "category": 4,
+      "cars": [6, 7],
+      "mechanics": [4]
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 7,
+    "fields": {
+      "name": "Dual Mass Flywheel Clutch Kit",
+      "part_number": "2290 601 083",
+      "price": "485.00",
+      "manufacturer": 6,
+      "category": 5,
+      "cars": [1, 2, 5],
+      "mechanics": [2]
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 8,
+    "fields": {
+      "name": "Gas Pressure Rear Shock Absorber",
+      "part_number": "314 883",
+      "price": "72.00",
+      "manufacturer": 6,
+      "category": 3,
+      "cars": [1, 5],
+      "mechanics": []
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 9,
+    "fields": {
+      "name": "Engine Water Pump with Gasket",
+      "part_number": "0 986 280 435",
+      "price": "64.20",
+      "manufacturer": 2,
+      "category": 6,
+      "cars": [2, 3, 4],
+      "mechanics": [3]
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 10,
+    "fields": {
+      "name": "Rear Brake Disc Solid 300mm",
+      "part_number": "08.9773.11",
+      "price": "65.00",
+      "manufacturer": 1,
+      "category": 1,
+      "cars": [6, 11, 12],
+      "mechanics": [10]
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 11,
+    "fields": {
+      "name": "Low-Metallic Brake Pads Rear Set",
+      "part_number": "P 85 200",
+      "price": "42.30",
+      "manufacturer": 11,
+      "category": 1,
+      "cars": [6, 11, 12, 15, 16],
+      "mechanics": [10, 2]
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 12,
+    "fields": {
+      "name": "Brake Caliper Front Left",
+      "part_number": "34116792219",
+      "price": "210.00",
+      "manufacturer": 1,
+      "category": 1,
+      "cars": [6, 11],
+      "mechanics": []
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 13,
+    "fields": {
+      "name": "Engine Air Filter Panel",
+      "part_number": "C 25 114",
+      "price": "18.90",
+      "manufacturer": 4,
+      "category": 2,
+      "cars": [8, 9, 10],
+      "mechanics": []
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 14,
+    "fields": {
+      "name": "Fuel Filter In-Line",
+      "part_number": "WK 820/17",
+      "price": "22.10",
+      "manufacturer": 4,
+      "category": 2,
+      "cars": [13, 14],
+      "mechanics": [9]
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 15,
+    "fields": {
+      "name": "Timing Belt Kit with Water Pump",
+      "part_number": "KP15517XS",
+      "price": "145.00",
+      "manufacturer": 14,
+      "category": 6,
+      "cars": [17, 18, 19],
+      "mechanics": [9]
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 16,
+    "fields": {
+      "name": "Rear Shock Absorber Gas",
+      "part_number": "344 022",
+      "price": "68.50",
+      "manufacturer": 6,
+      "category": 3,
+      "cars": [8, 9, 10],
+      "mechanics": []
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 17,
+    "fields": {
+      "name": "Front Stabilizer Link",
+      "part_number": "31306765731",
+      "price": "15.40",
+      "manufacturer": 13,
+      "category": 3,
+      "cars": [11, 12],
+      "mechanics": [8]
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 18,
+    "fields": {
+      "name": "Ignition Coil Pack",
+      "part_number": "0221604115",
+      "price": "38.70",
+      "manufacturer": 2,
+      "category": 4,
+      "cars": [15, 16],
+      "mechanics": [7]
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 19,
+    "fields": {
+      "name": "Oxygen Sensor Upstream",
+      "part_number": "0 258 006 537",
+      "price": "55.20",
+      "manufacturer": 2,
+      "category": 4,
+      "cars": [13, 14, 20],
+      "mechanics": []
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 20,
+    "fields": {
+      "name": "Clutch Master Cylinder",
+      "part_number": "6110 000 574",
+      "price": "47.90",
+      "manufacturer": 6,
+      "category": 5,
+      "cars": [17, 18],
+      "mechanics": [6]
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 21,
+    "fields": {
+      "name": "CV Joint Kit Outer",
+      "part_number": "304271",
+      "price": "62.30",
+      "manufacturer": 3,
+      "category": 5,
+      "cars": [19, 20],
+      "mechanics": []
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 22,
+    "fields": {
+      "name": "Radiator Assembly",
+      "part_number": "8MK 376 719-621",
+      "price": "132.00",
+      "manufacturer": 12,
+      "category": 6,
+      "cars": [8, 9, 10],
+      "mechanics": [5]
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 23,
+    "fields": {
+      "name": "Thermostat with Housing",
+      "part_number": "TH6791",
+      "price": "34.60",
+      "manufacturer": 15,
+      "category": 6,
+      "cars": [6, 11, 12],
+      "mechanics": []
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 24,
+    "fields": {
+      "name": "Front Headlight Assembly LED",
+      "part_number": "1EL011491",
+      "price": "320.00",
+      "manufacturer": 12,
+      "category": 7,
+      "cars": [15, 16],
+      "mechanics": []
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 25,
+    "fields": {
+      "name": "Side Mirror Electric Folding",
+      "part_number": "76253",
+      "price": "95.00",
+      "manufacturer": 12,
+      "category": 7,
+      "cars": [13, 14],
+      "mechanics": [5]
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 26,
+    "fields": {
+      "name": "Rear Bumper Cover",
+      "part_number": "5G0807421",
+      "price": "210.00",
+      "manufacturer": 10,
+      "category": 7,
+      "cars": [8],
+      "mechanics": []
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 27,
+    "fields": {
+      "name": "Dashboard Instrument Cluster",
+      "part_number": "5Q0920860",
+      "price": "275.00",
+      "manufacturer": 9,
+      "category": 8,
+      "cars": [8, 9],
+      "mechanics": []
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 28,
+    "fields": {
+      "name": "Leather Seat Cover Set",
+      "part_number": "SC-2201",
+      "price": "189.00",
+      "manufacturer": 10,
+      "category": 8,
+      "cars": [15, 16],
+      "mechanics": []
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 29,
+    "fields": {
+      "name": "Car Battery AGM 70Ah",
+      "part_number": "570901076",
+      "price": "165.00",
+      "manufacturer": 2,
+      "category": 9,
+      "cars": [11, 12, 19, 20],
+      "mechanics": [6, 8]
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 30,
+    "fields": {
+      "name": "Alternator 120A",
+      "part_number": "0124525044",
+      "price": "245.00",
+      "manufacturer": 2,
+      "category": 9,
+      "cars": [6, 11],
+      "mechanics": []
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 31,
+    "fields": {
+      "name": "Starter Motor 1.4kW",
+      "part_number": "0001108405",
+      "price": "198.00",
+      "manufacturer": 2,
+      "category": 9,
+      "cars": [17, 18],
+      "mechanics": []
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 32,
+    "fields": {
+      "name": "Exhaust Muffler Rear",
+      "part_number": "17417",
+      "price": "88.00",
+      "manufacturer": 8,
+      "category": 10,
+      "cars": [13, 14],
+      "mechanics": []
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 33,
+    "fields": {
+      "name": "Catalytic Converter",
+      "part_number": "08108",
+      "price": "310.00",
+      "manufacturer": 8,
+      "category": 10,
+      "cars": [9, 10],
+      "mechanics": []
+    }
+  },
+  {
+    "model": "catalog.part",
+    "pk": 34,
+    "fields": {
+      "name": "Lambda Sensor Downstream",
+      "part_number": "0 258 017 025",
+      "price": "48.00",
+      "manufacturer": 2,
+      "category": 10,
+      "cars": [6, 11, 12],
+      "mechanics": [7]
     }
   }
 ]

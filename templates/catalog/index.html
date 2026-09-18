@@ -3,6 +3,17 @@
 {% block title %}Dashboard - CarPart Hub{% endblock %}
 
 {% block content %}
+<style>
+  .card-hover {
+    transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    cursor: pointer;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.12) !important;
+  }
+</style>
+
 <div class="row mb-4">
   <div class="col">
     <h1 class="h2 fw-bold text-dark">System Overview</h1>
@@ -12,7 +23,7 @@
 
 <div class="row g-3 mb-4">
   <div class="col-md-4 col-sm-6">
-    <div class="card h-100 border-start border-4 border-warning shadow-sm">
+    <div class="card h-100 border-start border-4 border-warning shadow-sm position-relative card-hover">
       <div class="card-body">
         <div class="d-flex justify-content-between align-items-center">
           <div>
@@ -21,12 +32,13 @@
           </div>
           <i class="bi bi-cpu fs-1 text-warning"></i>
         </div>
+        <a href="{% url 'catalog:part-list' %}" class="stretched-link" aria-label="View Parts"></a>
       </div>
     </div>
   </div>
 
   <div class="col-md-4 col-sm-6">
-    <div class="card h-100 border-start border-4 border-primary shadow-sm">
+    <div class="card h-100 border-start border-4 border-primary shadow-sm position-relative card-hover">
       <div class="card-body">
         <div class="d-flex justify-content-between align-items-center">
           <div>
@@ -35,12 +47,13 @@
           </div>
           <i class="bi bi-car-front fs-1 text-primary"></i>
         </div>
+        <a href="{% url 'catalog:car-list' %}" class="stretched-link" aria-label="View Cars"></a>
       </div>
     </div>
   </div>
 
   <div class="col-md-4 col-sm-6">
-    <div class="card h-100 border-start border-4 border-success shadow-sm">
+    <div class="card h-100 border-start border-4 border-success shadow-sm position-relative card-hover">
       <div class="card-body">
         <div class="d-flex justify-content-between align-items-center">
           <div>
@@ -49,12 +62,13 @@
           </div>
           <i class="bi bi-buildings fs-1 text-success"></i>
         </div>
+        <a href="{% url 'catalog:manufacturer-list' %}" class="stretched-link" aria-label="View Manufacturers"></a>
       </div>
     </div>
   </div>
 
   <div class="col-md-4 col-sm-6">
-    <div class="card h-100 border-start border-4 border-info shadow-sm">
+    <div class="card h-100 border-start border-4 border-info shadow-sm position-relative card-hover">
       <div class="card-body">
         <div class="d-flex justify-content-between align-items-center">
           <div>
@@ -63,12 +77,13 @@
           </div>
           <i class="bi bi-tags fs-1 text-info"></i>
         </div>
+        <a href="{% url 'catalog:category-list' %}" class="stretched-link" aria-label="View Categories"></a>
       </div>
     </div>
   </div>
 
   <div class="col-md-4 col-sm-6">
-    <div class="card h-100 border-start border-4 border-secondary shadow-sm">
+    <div class="card h-100 border-start border-4 border-secondary shadow-sm position-relative card-hover">
       <div class="card-body">
         <div class="d-flex justify-content-between align-items-center">
           <div>
@@ -77,12 +92,13 @@
           </div>
           <i class="bi bi-people fs-1 text-secondary"></i>
         </div>
+        <a href="{% url 'catalog:mechanic-list' %}" class="stretched-link" aria-label="View Mechanics"></a>
       </div>
     </div>
   </div>
 
   <div class="col-md-4 col-sm-6">
-    <div class="card h-100 border-start border-4 border-dark shadow-sm bg-white">
+    <div class="card h-100 border-start border-4 border-dark shadow-sm bg-white position-relative card-hover">
       <div class="card-body">
         <div class="d-flex justify-content-between align-items-center">
           <div>
@@ -91,6 +107,7 @@
           </div>
           <i class="bi bi-clock-history fs-1 text-dark"></i>
         </div>
+        <a href="{% url 'catalog:mechanic-detail' user.id %}" class="stretched-link" aria-label="View My Profile"></a>
       </div>
     </div>
   </div>
