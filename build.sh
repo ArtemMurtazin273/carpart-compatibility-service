@@ -20,7 +20,12 @@ username = "user"
 password = "user12345"
 
 if not User.objects.filter(username=username).exists():
-    User.objects.create_superuser(username=username, password=password, email="user@example.com")
+    User.objects.create_superuser(
+        username=username,
+        password=password,
+        email="user@example.com",
+        license_number="TEST-0001"
+    )
     print(f"Created test user: {username}")
 else:
     print(f"Test user {username} already exists, skipping")
