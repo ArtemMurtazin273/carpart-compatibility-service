@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block title %}Register - CarPart Hub{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6 col-lg-5">
+    <div class="card shadow-sm p-4 mt-3">
+      <h3 class="text-center mb-3 fw-bold text-dark">
+        <i class="bi bi-person-plus me-2 text-warning"></i>Create Account
+      </h3>
+      <div class="alert alert-info py-2 small mb-3">
+        <i class="bi bi-info-circle me-1"></i>
+        <strong>License format:</strong> 3 uppercase letters followed by 5 digits (e.g. <code>MEC12345</code>).
+      </div>
+      <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div class="d-grid mt-3">
+          <button type="submit" class="btn btn-warning fw-semibold">Sign Up</button>
+        </div>
+      </form>
+      <div class="text-center mt-3 small">
+        <span class="text-muted">Already have an account?</span>
+        <a href="{% url 'login' %}" class="text-decoration-none fw-semibold ms-1">Log in here</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
