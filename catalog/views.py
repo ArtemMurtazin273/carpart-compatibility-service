@@ -1,6 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
@@ -249,15 +249,25 @@ class MechanicCreateView(LoginRequiredMixin, generic.CreateView):
     success_url = reverse_lazy("catalog:mechanic-list")
 
 
-class MechanicLicenseUpdateView(LoginRequiredMixin, generic.UpdateView):
+class MechanicLicenseUpdateView(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
     model = Mechanic
     form_class = MechanicLicenseUpdateForm
     success_url = reverse_lazy("catalog:mechanic-list")
+    raise_exception = True
+
+    def test_func(self):
+        mechanic = self.get_object()
+        return self.request.user == mechanic or self.request.user.is_staff
 
 
-class MechanicDeleteView(LoginRequiredMixin, generic.DeleteView):
+class MechanicDeleteView(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
     model = Mechanic
     success_url = reverse_lazy("catalog:mechanic-list")
+    raise_exception = True
+
+    def test_func(self):
+        mechanic = self.get_object()
+        return self.request.user == mechanic or self.request.user.is_staff
 
 
 class SignUpView(generic.CreateView):

@@ -10,14 +10,16 @@
         <h1 class="h3 fw-bold text-dark mb-1">{{ mechanic.first_name }} {{ mechanic.last_name }}</h1>
         <p class="text-muted mb-0">@{{ mechanic.username }} &bull; {{ mechanic.email }}</p>
       </div>
-      <div class="d-flex gap-2">
-        <a href="{% url 'catalog:mechanic-update' mechanic.id %}" class="btn btn-outline-primary">
-          <i class="bi bi-card-checklist me-1"></i>Update License
-        </a>
-        <a href="{% url 'catalog:mechanic-delete' mechanic.id %}" class="btn btn-outline-danger">
-          <i class="bi bi-trash me-1"></i>Delete
-        </a>
-      </div>
+      {% if user == mechanic or user.is_staff %}
+        <div class="d-flex gap-2">
+          <a href="{% url 'catalog:mechanic-update' mechanic.id %}" class="btn btn-outline-primary">
+            <i class="bi bi-card-checklist me-1"></i>Update License
+          </a>
+          <a href="{% url 'catalog:mechanic-delete' mechanic.id %}" class="btn btn-outline-danger">
+            <i class="bi bi-trash me-1"></i>Delete
+          </a>
+        </div>
+      {% endif %}
     </div>
 
     <div class="py-2 border-top border-bottom my-3">
