@@ -25,7 +25,7 @@ from catalog.views import (
     MechanicDetailView,
     MechanicCreateView,
     MechanicLicenseUpdateView,
-    MechanicDeleteView,
+    MechanicDeleteView, SignUpView,
 )
 
 urlpatterns = [
@@ -102,6 +102,7 @@ urlpatterns = [
         MechanicDeleteView.as_view(),
         name="mechanic-delete",
     ),
+    path("register/", SignUpView.as_view(), name="register"),
 ]
 
 app_name = "catalog"
